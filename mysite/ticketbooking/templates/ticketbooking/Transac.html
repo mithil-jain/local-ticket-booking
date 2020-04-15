@@ -1,0 +1,33 @@
+
+<html>
+<head>
+<link rel='stylesheet' href='index.css'>
+<link rel="shortcut icon" href="logofig.jpg" />
+<script>
+function myFunction() {
+    window.print();
+}
+</script>
+</head>
+<body style="background-color: F5F1F0;">
+<div style="display:flex;flex-wrap:wrap;">
+{% for data in datas %}
+<div style="border:1px solid black; flex:40%; padding-bottom:10px;">
+	<center><h1>Ticket</h1></center>
+	<center>Name : {{ data.username }}</center>
+	<center>Source: {{ data.source }}</center>
+	<center>Destination: {{ data.dest }}</center>
+	<center>Class: {{ data.class }}</center>
+	<center>No of Passengers : {{ data.number }}</center>
+	<center>Type of ticket : {% if data.type == '1' %}Single{% else %}Return{% endif %}</center>
+	<center>Amt Paid: {{ data.amount }}</center>
+</div>
+{% endfor %}
+	</div>
+<table align = "Center">
+<tr>
+<td><a href="{% url 'ticket:index' %}"><button>Home</button></a>
+</td>
+</tr>
+</body style="background-color: F5F1F0;">
+</html>

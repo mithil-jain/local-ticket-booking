@@ -1,0 +1,18 @@
+<html>
+<head>
+{% load static%}
+    <link rel='stylesheet' href="{% static 'ticketbooking/index.css' %}">
+<link rel="shortcut icon" href=
+        "logofig.jpg" />
+<title> Registration Page </title>
+</head>
+<body style="background-color: F5F1F0;">
+<center><img src="{% static 'ticketbooking/Logo.jpg' %}" width='35%'></center>
+<form method='post' action ="{% url 'ticket:signup' %}" >
+    {% csrf_token %}
+    {{form}}
+        <button type='Submit' name='register_submit' >Submit</Button>
+
+</form>
+</body style="background-color: F5F1F0;">
+</html>

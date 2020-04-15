@@ -1,0 +1,21 @@
+<html><head>
+ {% load static %}
+<link rel='stylesheet' href="{% static 'ticketbooking/index.css' %}">
+
+<link rel="shortcut icon" href="logofig.jpg" />
+</head><body style="background-color: F5F1F0;">
+<table align="right"><td></td></tr></table>
+
+ <center><img style="width: 485px; height: 167px;" alt="EasyTrip" src="{% static 'ticketbooking/Logo.lpg' %}" ></center>
+<hr>
+<center><h1>Welcome {{ user.get_username }} </h1></center>
+<center><h2>What do you want to do ?</h2></center>
+
+<div><table id="home" style="width: 40%; height: 136px; text-align: left; margin-left: auto; margin-right: auto;" cellpadding="2" cellspacing="2"><tbody style="background-color: F5F1F0;">
+<tr align="center"><td><a href="{% url 'ticket:book' %}"><button>Book Tickets</button></a></td>
+</a></td></tr>
+<tr align="center"><td><a href="{% url 'ticket:tran' %}"><button>Transactions</button></a></td>
+</tr>
+<tr align="center"> <td><a href="{% url 'ticket:logout' %}"><button>Logout</button></a></td></tbody style="background-color: F5F1F0;"></table>
+</div>
+</body style="background-color: F5F1F0;"></html>

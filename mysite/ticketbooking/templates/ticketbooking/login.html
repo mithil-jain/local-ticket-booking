@@ -1,0 +1,26 @@
+<html xmlns:ticke="http://www.w3.org/1999/xhtml">
+<head>
+ {% load static %}
+ <link rel='stylesheet' href="{% static 'ticketbooking/index.css' %}">
+ <link rel="shortcut icon" href="logofig.jpg" />
+<title>Easytrip</title>
+    {% load crispy_forms_tags %}
+</head>
+<body style="background-color: F5F1F0;">
+<center><img src="{% static 'ticketbooking/Logo.jpg' %}" width='35%'></center>
+<center>
+<form method='post' action ="{% url 'ticket:login' %}" >
+{% if user.is_authenticated %}
+        <p>You are already logged in</p>
+    {% else %}
+        <form id ="login_form" method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input onclick="load()" type="submit" value="login">
+            <a href="{% url 'ticket:signup' %}"><input type="button" value="Signup"></a>
+        </form>
+    {% endif %}
+</form>
+    </center>
+</body>
+</html>
